@@ -152,6 +152,24 @@ git push -u origin main
 ```
 
 ---
+### Known Limitations / Production Notes
+## ⚠️ Deployment Notes
+
+## Photo Storage
+
+Student photos are uploaded using Multer and stored in the backend `uploads/` directory. The file path is saved in PostgreSQL and exposed through the API.
+
+**Important:** When deployed on Render, uploaded files are stored on temporary (ephemeral) storage. As a result, uploaded photos may be lost whenever the service is redeployed or restarted.
+
+For a production-ready deployment, image files should be stored in dedicated cloud storage services such as:
+
+* Cloudinary
+* AWS S3
+* Supabase Storage
+* Google Cloud Storage
+
+The current implementation is suitable for development, demonstration, and technical assessment purposes.
+
 
 ## 📝 License
 
